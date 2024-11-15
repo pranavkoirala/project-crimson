@@ -31,11 +31,15 @@ async function main() {
 }
 
 async function checkForFriday13th() {
-  const currentDate = new Date();
-  const currentDay = currentDate.toLocaleDateString("en-US", {
+  let currentDate = new Date().toLocaleString("en-US", {
+    timeZone: "America/New_York",
+  });
+
+  let currentDay = new Date(currentDate).toLocaleDateString("en-US", {
     weekday: "long",
   });
-  const currentDateNum = currentDate.toLocaleDateString("en-US", {
+
+  let currentDateNum = new Date(currentDate).toLocaleDateString("en-US", {
     day: "numeric",
   });
 
