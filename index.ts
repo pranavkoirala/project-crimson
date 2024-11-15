@@ -1,6 +1,17 @@
 import { AtpAgent } from "@atproto/api";
 import * as dotenv from "dotenv";
 import * as process from "process";
+import http from "http";
+
+const PORT = process.env.PORT || 3000;
+http
+  .createServer((req, res) => {
+    res.writeHead(200, { "Content-Type": "text/plain" });
+    res.end("Crimson bot is active.\n");
+  })
+  .listen(PORT, () => {
+    console.log(`Server is listening on port ${PORT}`);
+  });
 
 dotenv.config();
 
