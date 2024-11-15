@@ -4,9 +4,6 @@ import * as process from "process";
 
 dotenv.config();
 
-let currentDate = new Date().toLocaleString("en-US", {
-  timeZone: "America/New_York",
-});
 let previousDate = new Date().toLocaleDateString("en-US", { day: "numeric" });
 let previousDay = new Date().toLocaleDateString("en-US", { weekday: "long" });
 
